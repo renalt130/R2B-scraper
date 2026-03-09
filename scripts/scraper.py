@@ -219,6 +219,21 @@ def extract_projects_generic(soup, base_url, source):
             'project', 'research', 'tutkimus', 'hanke', 'forskning', 'projekt',
             'r2b', 'tutli', 'pre-commerci', 'innovation', 'startup',
         ]
+        SKIP_LINK_PATTERNS = [
+            'login', 'sign-in', 'cookie', 'privacy', 'contact-us',
+            'facebook', 'twitter', 'linkedin', 'instagram', 'youtube',
+            '.jpg', '.png', '.pdf', '#', 'javascript:', 'mailto:',
+            'accessibility', 'sitemap', 'terms', 'disclaimer', '/en/$',
+            '/fi/$', '/sv/$', '/da/$', 'search', 'staff', 'people',
+            'news', 'event', 'blog', 'about-us', 'career',
+        ]
+
+        # If the SOURCE URL itself is a project listing page, be more inclusive
+        # with links — every internal subpage is likely a project.
+        base_lower = base_url.lower()
+        source_is_project_listing = any(h in base_lower for h in PROJECT_URL_HINTS)
+        base_parsed = urlparse(base_url)
+
         for link_el in soup.select('a[href]'):
             href = link_el.get('href', '')
             text = link_el.get_text(strip=True)
@@ -228,14 +243,35 @@ def extract_projects_generic(soup, base_url, source):
             if text in seen_titles or full_url in seen_urls:
                 continue
             href_lower = href.lower()
-            # Skip nav, footer, social, image links
-            if any(skip in href_lower for skip in [
-                'login', 'sign-in', 'cookie', 'privacy', 'contact-us',
-                'facebook', 'twitter', 'linkedin', 'instagram', 'youtube',
-                '.jpg', '.png', '.pdf', '#', 'javascript:',
-            ]):
+            full_url_lower = full_url.lower()
+            # Skip nav, footer, social, image, utility links
+            if any(skip in href_lower for skip in SKIP_LINK_PATTERNS):
                 continue
+
+            # Determine if this link is a project link
+            is_project_link = False
+
+            # Method A: URL itself contains project hints
             if any(kw in href_lower for kw in PROJECT_URL_HINTS):
+                is_project_link = True
+
+            # Method B: We're on a project listing page, and this is an
+            # internal link that goes deeper (subpath), not back up
+            if not is_project_link and source_is_project_listing:
+                link_parsed = urlparse(full_url)
+                same_domain = link_parsed.netloc == base_parsed.netloc
+                is_subpath = link_parsed.path.startswith(base_parsed.path.rstrip('/'))
+                goes_deeper = len(link_parsed.path.strip('/').split('/')) > len(base_parsed.path.strip('/').split('/'))
+                if same_domain and (is_subpath or goes_deeper):
+                    is_project_link = True
+
+            # Method C: Link text looks like a project name (title-case, 3+ words)
+            if not is_project_link and source_is_project_listing:
+                words = text.split()
+                if len(words) >= 2 and not text.isupper() and not text.islower():
+                    is_project_link = True
+
+            if is_project_link:
                 seen_titles.add(text)
                 seen_urls.add(full_url)
                 projects.append({

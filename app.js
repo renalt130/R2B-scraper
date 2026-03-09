@@ -86,7 +86,7 @@ async function loadProjects() {
       by_country: data.by_country || {},
     };
     if (data.last_updated) {
-      document.getElementById('lastUpdated').textContent = `Last scan: ${formatDate(data.last_updated)}`;
+      document.getElementById('lastUpdated').textContent = `Last scan: ${formatDate(data.last_updated, true)}`;
     }
     updateStats();
     populateFilters();
@@ -403,10 +403,14 @@ function esc(str) {
   return div.innerHTML;
 }
 
-function formatDate(dateStr) {
+function formatDate(dateStr, includeTime = false) {
   if (!dateStr) return '—';
   try {
-    return new Date(dateStr).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    const d = new Date(dateStr);
+    const datePart = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    if (!includeTime) return datePart;
+    const timePart = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    return `${datePart} at ${timePart}`;
   } catch { return dateStr; }
 }
 
