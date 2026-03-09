@@ -60,16 +60,22 @@
         </select>
         <select id="filterCategory">
           <option value="all">All Categories</option>
-          <option value="semiconductors">Semiconductors</option>
-          <option value="photonics">Photonics &amp; Optics</option>
-          <option value="advanced_materials">Advanced Materials</option>
-          <option value="equipment">Equipment &amp; Metrology</option>
-          <option value="quantum">Quantum</option>
         </select>
       </div>
       <button class="btn btn-secondary" id="btnSources">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 5v14M5 12h14"/></svg>
-        Manage Sources
+        Sources
+      </button>
+      <button class="btn btn-secondary" id="btnKeywords">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 6h16M4 12h10M4 18h14"/></svg>
+        Keywords
+      </button>
+      <button class="btn btn-accent" id="btnScrapeNow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        Scrape Now
+      </button>
+      <button class="btn btn-ghost" id="btnRestore" style="display:none;" onclick="undismissAll()" title="Restore dismissed projects">
+        Restore dismissed
       </button>
     </div>
   </section>
@@ -152,6 +158,28 @@ TU Delft Projects, https://research.tudelft.nl/en/projects/, TU Delft, Netherlan
         <hr class="modal-divider">
         <h3>Current Sources <span class="source-count" id="sourceCount">(0)</span></h3>
         <div class="sources-list" id="sourcesList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEYWORDS MODAL -->
+  <div class="modal-overlay" id="keywordsModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Thesis Keywords</h2>
+        <button class="modal-close" id="closeKeywordsModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="bulk-hint">These keywords determine which projects qualify for the Cloudberry thesis. Add or remove keywords per category. Changes are saved to the repo and take effect on the next scrape.</p>
+        <div id="keywordCategories"></div>
+        <hr class="modal-divider">
+        <div class="add-source-form">
+          <h3>Add New Category</h3>
+          <div class="form-row">
+            <input type="text" id="newCategoryName" placeholder="Category name (e.g. robotics)">
+            <button class="btn btn-primary" id="btnAddCategory">Add Category</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

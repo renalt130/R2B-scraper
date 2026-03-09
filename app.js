@@ -5,15 +5,42 @@
 
 const DATA_URL = 'data/projects.json';
 const SOURCES_URL = 'sources.json';
+const KEYWORDS_URL = 'keywords.json';
 
 let allProjects = [];
 let allSources = [];
+let allKeywords = {};
 let dataMetadata = {};
+
+// ---- Dismissed Projects (persisted in localStorage) ----
+const DISMISSED_KEY = 'cloudberry_dismissed_projects';
+
+function getDismissedIds() {
+  try { return JSON.parse(localStorage.getItem(DISMISSED_KEY) || '[]'); }
+  catch { return []; }
+}
+function dismissProject(id) {
+  const dismissed = getDismissedIds();
+  if (!dismissed.includes(id)) {
+    dismissed.push(id);
+    localStorage.setItem(DISMISSED_KEY, JSON.stringify(dismissed));
+  }
+  renderProjects();
+  updateStats();
+  showToast('Project dismissed. It won\'t appear again.');
+}
+function undismissAll() {
+  localStorage.removeItem(DISMISSED_KEY);
+  renderProjects();
+  updateStats();
+  showToast('All dismissed projects restored.');
+}
 
 // ---- Init ----
 document.addEventListener('DOMContentLoaded', async () => {
   setupEventListeners();
   await loadSources();
+  await loadKeywords();
   await loadProjects();
 });
 
@@ -26,6 +53,10 @@ function setupEventListeners() {
   document.getElementById('closeSourcesModal').addEventListener('click', () => toggleModal('sourcesModal', false));
   document.getElementById('closeDetailModal').addEventListener('click', () => toggleModal('detailModal', false));
   document.getElementById('btnAddSource').addEventListener('click', addSource);
+  document.getElementById('btnKeywords').addEventListener('click', () => toggleModal('keywordsModal', true));
+  document.getElementById('closeKeywordsModal').addEventListener('click', () => toggleModal('keywordsModal', false));
+  document.getElementById('btnAddCategory').addEventListener('click', addKeywordCategory);
+  document.getElementById('btnScrapeNow').addEventListener('click', triggerScrape);
   setupBulkImport();
 
   // Close modals on overlay click
@@ -84,7 +115,9 @@ function updateStats() {
   const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
   // All projects in data are already active + thesis-qualifying
-  document.getElementById('statTotal').textContent = allProjects.length;
+  const dismissed = getDismissedIds();
+  const visibleProjects = allProjects.filter(p => !dismissed.includes(p.id));
+  document.getElementById('statTotal').textContent = visibleProjects.length;
   document.getElementById('statNew').textContent = allProjects.filter(p => {
     return p.first_seen && new Date(p.first_seen) > weekAgo;
   }).length;
@@ -126,8 +159,11 @@ function getFilteredProjects() {
   const country = document.getElementById('filterCountry').value;
   const university = document.getElementById('filterUniversity').value;
   const category = document.getElementById('filterCategory').value;
+  const dismissed = getDismissedIds();
 
   return allProjects.filter(p => {
+    // Hide dismissed
+    if (dismissed.includes(p.id)) return false;
     // Search
     if (query) {
       const haystack = [
@@ -178,29 +214,40 @@ function renderProjects() {
     const score = p.relevance_score || 0;
 
     return `
-    <div class="project-card flagged" onclick="showDetail(${i})" data-index="${i}">
-      <div class="project-relevance relevant" title="Relevance score: ${score}">
-        ${score}
-      </div>
-      <div class="project-body">
-        <div class="project-header">
-          <span class="project-title">${esc(p.title || 'Untitled Project')}</span>
-          ${isNew ? '<span class="project-badge badge-new">NEW</span>' : ''}
-          ${(p.categories || []).map(c => `<span class="project-badge badge-category">${esc(categoryLabel(c))}</span>`).join('')}
+    <div class="project-card flagged" data-index="${i}">
+      <button class="btn-dismiss" title="Dismiss this project" onclick="event.stopPropagation(); dismissProject('${esc(p.id)}')">&times;</button>
+      <div class="project-inner" onclick="showDetail(${i})">
+        <div class="project-relevance relevant" title="Relevance score: ${score}">
+          ${score}
         </div>
-        <div class="project-desc">${esc(p.description || 'No description available.')}</div>
-        <div class="project-meta">
-          <span>&#127891; ${esc(p.source_org || 'Unknown')}</span>
-          <span>&#127758; ${esc(p.country || 'Finland')}</span>
-          ${p.contact_name ? `<span>&#128100; ${esc(p.contact_name)}</span>` : ''}
-          ${p.contact_email ? `<span>&#9993; ${esc(p.contact_email)}</span>` : ''}
-          ${p.first_seen ? `<span>&#128197; ${formatDate(p.first_seen)}</span>` : ''}
+        <div class="project-body">
+          <div class="project-header">
+            <span class="project-title">${esc(p.title || 'Untitled Project')}</span>
+            ${isNew ? '<span class="project-badge badge-new">NEW</span>' : ''}
+            ${(p.categories || []).map(c => `<span class="project-badge badge-category">${esc(categoryLabel(c))}</span>`).join('')}
+          </div>
+          <div class="project-desc">${esc(p.description || 'No description available.')}</div>
+          <div class="project-meta">
+            <span>&#127891; ${esc(p.source_org || 'Unknown')}</span>
+            <span>&#127758; ${esc(p.country || 'Finland')}</span>
+            ${p.contact_name ? `<span>&#128100; ${esc(p.contact_name)}</span>` : ''}
+            ${p.contact_email ? `<span>&#9993; ${esc(p.contact_email)}</span>` : ''}
+            ${p.first_seen ? `<span>&#128197; ${formatDate(p.first_seen)}</span>` : ''}
+          </div>
         </div>
       </div>
     </div>`;
   }).join('');
 
   container._sortedData = sorted;
+
+  // Show/hide restore button
+  const dismissedCount = getDismissedIds().length;
+  const restoreBtn = document.getElementById('btnRestore');
+  if (restoreBtn) {
+    restoreBtn.style.display = dismissedCount > 0 ? '' : 'none';
+    restoreBtn.textContent = `Restore dismissed (${dismissedCount})`;
+  }
 }
 
 function showDetail(index) {
@@ -377,6 +424,144 @@ function categoryLabel(cat) {
 function debounce(fn, ms) {
   let timer;
   return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), ms); };
+}
+
+// ---- Keywords Management ----
+async function loadKeywords() {
+  try {
+    const res = await fetch(KEYWORDS_URL);
+    if (!res.ok) throw new Error('No keywords');
+    allKeywords = await res.json();
+    renderKeywords();
+    populateCategoryFilter();
+  } catch (e) {
+    allKeywords = {};
+  }
+}
+
+function populateCategoryFilter() {
+  const sel = document.getElementById('filterCategory');
+  sel.innerHTML = '<option value="all">All Categories</option>';
+  Object.keys(allKeywords).forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = categoryLabel(cat);
+    sel.appendChild(opt);
+  });
+}
+
+function renderKeywords() {
+  const container = document.getElementById('keywordCategories');
+  if (!container) return;
+  const cats = Object.keys(allKeywords);
+  container.innerHTML = cats.map(cat => {
+    const label = cat.replace(/_/g, ' ');
+    const keywords = allKeywords[cat] || [];
+    return `
+    <div class="keyword-category" data-cat="${esc(cat)}">
+      <div class="keyword-category-header">
+        <h4>${esc(label)} (${keywords.length})</h4>
+        <button class="btn-remove-cat" onclick="removeKeywordCategory('${esc(cat)}')">Remove category</button>
+      </div>
+      <div class="keyword-tags">
+        ${keywords.map(kw => `
+          <span class="keyword-tag">
+            ${esc(kw)}
+            <button class="tag-remove" onclick="removeKeyword('${esc(cat)}','${esc(kw)}')">&times;</button>
+          </span>
+        `).join('')}
+      </div>
+      <div class="keyword-add-row">
+        <input type="text" placeholder="Add keyword..." id="kwInput_${esc(cat)}" onkeydown="if(event.key==='Enter')addKeyword('${esc(cat)}')">
+        <button class="btn btn-primary btn-sm" onclick="addKeyword('${esc(cat)}')">Add</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function saveKeywords() {
+  try {
+    const res = await fetch('/.netlify/functions/manage-sources', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'update_keywords', keywords: allKeywords }),
+    });
+    if (!res.ok) throw new Error('Save failed');
+  } catch {
+    // Silently fail — keywords still updated in memory for display
+  }
+}
+
+function addKeyword(cat) {
+  const input = document.getElementById(`kwInput_${cat}`);
+  if (!input) return;
+  const kw = input.value.trim().toLowerCase();
+  if (!kw) return;
+  if (!allKeywords[cat]) allKeywords[cat] = [];
+  if (allKeywords[cat].includes(kw)) {
+    showToast('Keyword already exists in this category.', 'error');
+    return;
+  }
+  allKeywords[cat].push(kw);
+  input.value = '';
+  renderKeywords();
+  saveKeywords();
+  showToast(`Added "${kw}" to ${cat.replace(/_/g, ' ')}.`);
+}
+
+function removeKeyword(cat, kw) {
+  if (!allKeywords[cat]) return;
+  allKeywords[cat] = allKeywords[cat].filter(k => k !== kw);
+  renderKeywords();
+  saveKeywords();
+  showToast(`Removed "${kw}" from ${cat.replace(/_/g, ' ')}.`);
+}
+
+function addKeywordCategory() {
+  const input = document.getElementById('newCategoryName');
+  const name = input.value.trim().toLowerCase().replace(/\s+/g, '_');
+  if (!name) return;
+  if (allKeywords[name]) {
+    showToast('Category already exists.', 'error');
+    return;
+  }
+  allKeywords[name] = [];
+  input.value = '';
+  renderKeywords();
+  saveKeywords();
+  showToast(`Category "${name.replace(/_/g, ' ')}" created. Add keywords to it!`);
+}
+
+function removeKeywordCategory(cat) {
+  if (!confirm(`Remove the entire "${cat.replace(/_/g, ' ')}" category and all its keywords?`)) return;
+  delete allKeywords[cat];
+  renderKeywords();
+  saveKeywords();
+  showToast(`Category "${cat.replace(/_/g, ' ')}" removed.`);
+}
+
+// ---- Scrape Now ----
+async function triggerScrape() {
+  const btn = document.getElementById('btnScrapeNow');
+  btn.disabled = true;
+  btn.textContent = 'Triggering...';
+  try {
+    const res = await fetch('/.netlify/functions/manage-sources', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'trigger_scrape' }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || 'Failed');
+    }
+    showToast('Scrape triggered! It will take a few minutes. Refresh the page afterwards.');
+  } catch (err) {
+    showToast('Could not trigger scrape: ' + err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Scrape Now';
+  }
 }
 
 // ---- Bulk Import ----
