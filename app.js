@@ -222,7 +222,7 @@ function renderProjects() {
         </div>
         <div class="project-body">
           <div class="project-header">
-            <span class="project-title">${esc(p.title || 'Untitled Project')}</span>
+            <span class="project-title">${esc(cleanTitle(p.title))}</span>
             ${isNew ? '<span class="project-badge badge-new">NEW</span>' : ''}
             ${(p.categories || []).map(c => `<span class="project-badge badge-category">${esc(categoryLabel(c))}</span>`).join('')}
           </div>
@@ -256,7 +256,7 @@ function showDetail(index) {
   const p = sorted[index];
   if (!p) return;
 
-  document.getElementById('detailTitle').textContent = p.title || 'Untitled Project';
+  document.getElementById('detailTitle').textContent = cleanTitle(p.title);
   document.getElementById('detailBody').innerHTML = `
     <div class="detail-section">
       <h3>Description</h3>
@@ -412,6 +412,11 @@ function formatDate(dateStr, includeTime = false) {
     const timePart = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
     return `${datePart} at ${timePart}`;
   } catch { return dateStr; }
+}
+
+function cleanTitle(title) {
+  if (!title) return 'Untitled Project';
+  return title.replace(/^(move to page\s*|go to\s*|navigate to\s*)/i, '').trim() || 'Untitled Project';
 }
 
 function categoryLabel(cat) {
