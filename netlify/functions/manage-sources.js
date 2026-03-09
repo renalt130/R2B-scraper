@@ -121,6 +121,8 @@ exports.handler = async (event) => {
       const existingUrls = new Set(sources.map(s => s.url));
       const unique = bulkSources.filter(s => s.name && s.url && !existingUrls.has(s.url));
       sources.push(...unique);
+    } else if (action === 'replace_all' && Array.isArray(body.sources)) {
+      sources = body.sources;
     } else if (action === 'remove' && typeof index === 'number') {
       if (index >= 0 && index < sources.length) {
         sources.splice(index, 1);

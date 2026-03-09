@@ -91,21 +91,108 @@
 
   <!-- SOURCES MODAL -->
   <div class="modal-overlay" id="sourcesModal">
-    <div class="modal">
+    <div class="modal modal-wide">
       <div class="modal-header">
-        <h2>Manage Sources</h2>
+        <h2>Sources <span class="source-count" id="sourceCount">(0)</span></h2>
         <button class="modal-close" id="closeSourcesModal">&times;</button>
       </div>
       <div class="modal-body">
+
+        <!-- Tabs -->
+        <div class="sources-tabs">
+          <button class="sources-tab active" data-sources-tab="browse" id="tabBrowse">Browse Sources</button>
+          <button class="sources-tab" data-sources-tab="add" id="tabAdd">Add Source</button>
+          <button class="sources-tab" data-sources-tab="bulk" id="tabBulk">Bulk Import</button>
+        </div>
+
+        <!-- BROWSE TAB: Grouped list -->
+        <div class="sources-tab-panel active" id="panelBrowse">
+          <div class="sources-search-row">
+            <input type="text" id="sourceSearchInput" placeholder="Filter sources...">
+          </div>
+          <div class="sources-grouped" id="sourcesGrouped"></div>
+        </div>
+
+        <!-- ADD TAB -->
+        <div class="sources-tab-panel" id="panelAdd">
+          <div class="add-source-form">
+            <div class="form-row">
+              <input type="text" id="newSourceName" placeholder="Source name (e.g. Aalto Research Projects)">
+              <input type="url" id="newSourceUrl" placeholder="URL to monitor (e.g. https://research.aalto.fi/en/projects/)">
+            </div>
+            <div class="form-row">
+              <input type="text" id="newSourceOrg" placeholder="Organization (e.g. Aalto University)">
+              <select id="newSourceCountry">
+                <option value="Finland">Finland</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Norway">Norway</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Germany">Germany</option>
+                <option value="Other">Other</option>
+              </select>
+              <select id="newSourceType">
+                <option value="university">University</option>
+                <option value="research_org">Research Org</option>
+                <option value="funding_body">Funding Body</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="btnAddSource">Add Source</button>
+          </div>
+        </div>
+
+        <!-- BULK TAB -->
+        <div class="sources-tab-panel" id="panelBulkTab">
+          <div class="bulk-import-section">
+            <div class="bulk-tabs">
+              <button class="bulk-tab active" data-tab="paste" id="tabPaste">Paste</button>
+              <button class="bulk-tab" data-tab="upload" id="tabUpload">Upload CSV / Excel</button>
+            </div>
+
+            <div class="bulk-panel" id="panelPaste">
+              <p class="bulk-hint">One source per line. Format: <code>name, url, organization, country, type</code><br>
+              Minimum: <code>name, url</code> (defaults: country=Finland, type=university, org=name)</p>
+              <textarea id="bulkPasteInput" rows="6" placeholder="Aalto Research Projects, https://research.aalto.fi/en/projects/, Aalto University, Finland, university
+TU Delft Projects, https://research.tudelft.nl/en/projects/, TU Delft, Netherlands, university"></textarea>
+              <button class="btn btn-primary" id="btnBulkPaste">Import Pasted Sources</button>
+            </div>
+
+            <div class="bulk-panel" id="panelUpload" style="display:none;">
+              <p class="bulk-hint">Upload a CSV or Excel file with columns: <code>name, url, organization, country, type</code><br>
+              First row should be headers. Only <code>name</code> and <code>url</code> are required.</p>
+              <div class="file-drop-zone" id="fileDropZone">
+                <input type="file" id="bulkFileInput" accept=".csv,.xlsx,.xls,.tsv" style="display:none;">
+                <p>Drop a file here or <a href="#" id="fileBrowseLink">browse</a></p>
+                <p class="bulk-hint">CSV, TSV, XLS, or XLSX</p>
+              </div>
+              <div id="bulkFilePreview" style="display:none;">
+                <p class="bulk-hint" id="bulkFileStatus"></p>
+                <button class="btn btn-primary" id="btnBulkUpload">Import From File</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT SOURCE MODAL -->
+  <div class="modal-overlay" id="editSourceModal">
+    <div class="modal modal-sm">
+      <div class="modal-header">
+        <h2>Edit Source</h2>
+        <button class="modal-close" id="closeEditSourceModal">&times;</button>
+      </div>
+      <div class="modal-body">
         <div class="add-source-form">
-          <h3>Add New Source</h3>
           <div class="form-row">
-            <input type="text" id="newSourceName" placeholder="Source name (e.g. Aalto Research Projects)">
-            <input type="url" id="newSourceUrl" placeholder="URL to monitor (e.g. https://research.aalto.fi/en/projects/)">
+            <input type="text" id="editSourceName" placeholder="Source name">
+            <input type="url" id="editSourceUrl" placeholder="URL">
           </div>
           <div class="form-row">
-            <input type="text" id="newSourceOrg" placeholder="Organization (e.g. Aalto University)">
-            <select id="newSourceCountry">
+            <input type="text" id="editSourceOrg" placeholder="Organization">
+            <select id="editSourceCountry">
               <option value="Finland">Finland</option>
               <option value="Sweden">Sweden</option>
               <option value="Norway">Norway</option>
@@ -114,50 +201,15 @@
               <option value="Germany">Germany</option>
               <option value="Other">Other</option>
             </select>
-            <select id="newSourceType">
+            <select id="editSourceType">
               <option value="university">University</option>
               <option value="research_org">Research Org</option>
               <option value="funding_body">Funding Body</option>
             </select>
           </div>
-          <button class="btn btn-primary" id="btnAddSource">Add Source</button>
+          <input type="hidden" id="editSourceIndex">
+          <button class="btn btn-primary" id="btnSaveSource">Save Changes</button>
         </div>
-
-        <hr class="modal-divider">
-
-        <div class="bulk-import-section">
-          <h3>Bulk Import</h3>
-          <div class="bulk-tabs">
-            <button class="bulk-tab active" data-tab="paste" id="tabPaste">Paste</button>
-            <button class="bulk-tab" data-tab="upload" id="tabUpload">Upload CSV / Excel</button>
-          </div>
-
-          <div class="bulk-panel" id="panelPaste">
-            <p class="bulk-hint">One source per line. Format: <code>name, url, organization, country, type</code><br>
-            Minimum: <code>name, url</code> (defaults: country=Finland, type=university, org=name)</p>
-            <textarea id="bulkPasteInput" rows="6" placeholder="Aalto Research Projects, https://research.aalto.fi/en/projects/, Aalto University, Finland, university
-TU Delft Projects, https://research.tudelft.nl/en/projects/, TU Delft, Netherlands, university"></textarea>
-            <button class="btn btn-primary" id="btnBulkPaste">Import Pasted Sources</button>
-          </div>
-
-          <div class="bulk-panel" id="panelUpload" style="display:none;">
-            <p class="bulk-hint">Upload a CSV or Excel file with columns: <code>name, url, organization, country, type</code><br>
-            First row should be headers. Only <code>name</code> and <code>url</code> are required.</p>
-            <div class="file-drop-zone" id="fileDropZone">
-              <input type="file" id="bulkFileInput" accept=".csv,.xlsx,.xls,.tsv" style="display:none;">
-              <p>Drop a file here or <a href="#" id="fileBrowseLink">browse</a></p>
-              <p class="bulk-hint">CSV, TSV, XLS, or XLSX</p>
-            </div>
-            <div id="bulkFilePreview" style="display:none;">
-              <p class="bulk-hint" id="bulkFileStatus"></p>
-              <button class="btn btn-primary" id="btnBulkUpload">Import From File</button>
-            </div>
-          </div>
-        </div>
-
-        <hr class="modal-divider">
-        <h3>Current Sources <span class="source-count" id="sourceCount">(0)</span></h3>
-        <div class="sources-list" id="sourcesList"></div>
       </div>
     </div>
   </div>

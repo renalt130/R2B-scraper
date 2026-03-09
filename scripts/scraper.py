@@ -526,7 +526,20 @@ def main():
 
         print()
 
-    # ── Build output: only active, qualifying projects ──
+    # ── Mark projects not seen this run ──
+    # Projects previously found but not re-discovered this scan get a miss_count.
+    # They are kept for up to 4 consecutive misses (about a month of weekly scans).
+    MAX_MISSES = 4
+    for pid, p in existing_projects.items():
+        if p.get('last_seen') != now and p.get('status') == 'active':
+            p['miss_count'] = p.get('miss_count', 0) + 1
+            if p['miss_count'] >= MAX_MISSES:
+                p['status'] = 'stale'
+                print(f"  ⚠ STALE (missed {p['miss_count']}x): {p.get('title', '')[:60]}")
+        elif p.get('last_seen') == now:
+            p['miss_count'] = 0  # Reset if re-found
+
+    # ── Build output: active + recently missed projects ──
     active_projects = [
         p for p in existing_projects.values()
         if p.get('status', 'active') == 'active' and p.get('is_relevant', False)

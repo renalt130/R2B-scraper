@@ -57,6 +57,9 @@ function setupEventListeners() {
   document.getElementById('closeKeywordsModal').addEventListener('click', () => toggleModal('keywordsModal', false));
   document.getElementById('btnAddCategory').addEventListener('click', addKeywordCategory);
   document.getElementById('btnScrapeNow').addEventListener('click', triggerScrape);
+  document.getElementById('closeEditSourceModal').addEventListener('click', () => toggleModal('editSourceModal', false));
+  document.getElementById('btnSaveSource').addEventListener('click', saveEditedSource);
+  setupSourcesTabs();
   setupBulkImport();
 
   // Close modals on overlay click
@@ -298,26 +301,168 @@ function showDetail(index) {
 }
 
 // ---- Sources ----
+const TYPE_ICONS = {
+  university: '&#127891;',
+  research_org: '&#128300;',
+  funding_body: '&#128176;',
+};
+const TYPE_LABELS = {
+  university: 'University',
+  research_org: 'Research Institute',
+  funding_body: 'Funding Body',
+};
+
 function renderSources() {
-  const list = document.getElementById('sourcesList');
   document.getElementById('sourceCount').textContent = `(${allSources.length})`;
   document.getElementById('statSources').textContent = allSources.length;
+  renderSourcesGrouped();
+}
 
-  if (allSources.length === 0) {
-    list.innerHTML = '<p style="color:var(--muted);font-size:13px;">No sources configured yet.</p>';
+function renderSourcesGrouped(filter = '') {
+  const container = document.getElementById('sourcesGrouped');
+  const filterLower = filter.toLowerCase();
+
+  // Group by country → organization
+  const grouped = {};
+  allSources.forEach((s, i) => {
+    if (filterLower) {
+      const text = `${s.name} ${s.organization} ${s.url} ${s.country} ${s.type}`.toLowerCase();
+      if (!text.includes(filterLower)) return;
+    }
+    const country = s.country || 'Other';
+    const org = s.organization || s.name;
+    if (!grouped[country]) grouped[country] = {};
+    if (!grouped[country][org]) grouped[country][org] = [];
+    grouped[country][org].push({ ...s, _index: i });
+  });
+
+  if (Object.keys(grouped).length === 0) {
+    container.innerHTML = '<p style="color:var(--muted);font-size:13px;">No sources match your filter.</p>';
     return;
   }
 
-  list.innerHTML = allSources.map((s, i) => `
-    <div class="source-item">
-      <div class="source-info">
-        <div class="source-name">${esc(s.name)}</div>
-        <div class="source-org">${esc(s.organization || '')} &bull; ${esc(s.country || 'Finland')} &bull; ${esc(s.type || 'university')}</div>
-        <div class="source-url" title="${esc(s.url)}">${esc(s.url)}</div>
+  // Sort countries: Finland first, then alphabetical
+  const countryOrder = Object.keys(grouped).sort((a, b) => {
+    if (a === 'Finland') return -1;
+    if (b === 'Finland') return 1;
+    return a.localeCompare(b);
+  });
+
+  let html = '';
+  for (const country of countryOrder) {
+    const orgs = grouped[country];
+    const orgNames = Object.keys(orgs).sort();
+    const totalInCountry = orgNames.reduce((sum, o) => sum + orgs[o].length, 0);
+
+    html += `<div class="source-country-group">
+      <div class="source-country-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <span class="source-country-flag">${countryFlag(country)}</span>
+        <span class="source-country-name">${esc(country)}</span>
+        <span class="source-country-count">${totalInCountry} source${totalInCountry !== 1 ? 's' : ''}</span>
+        <span class="source-chevron">&#9660;</span>
       </div>
-      <button class="btn btn-danger btn-sm" onclick="removeSource(${i})">Remove</button>
-    </div>
-  `).join('');
+      <div class="source-country-body">`;
+
+    for (const orgName of orgNames) {
+      const sources = orgs[orgName];
+      const typeIcon = TYPE_ICONS[sources[0].type] || '&#127891;';
+      const typeLabel = TYPE_LABELS[sources[0].type] || sources[0].type;
+
+      html += `<div class="source-org-group">
+        <div class="source-org-header">
+          <span class="source-org-icon">${typeIcon}</span>
+          <span class="source-org-name">${esc(orgName)}</span>
+          <span class="source-org-type">${esc(typeLabel)}</span>
+        </div>
+        <div class="source-org-items">`;
+
+      for (const s of sources) {
+        html += `<div class="source-item">
+          <div class="source-info">
+            <div class="source-name">${esc(s.name)}</div>
+            <a class="source-url" href="${esc(s.url)}" target="_blank" title="${esc(s.url)}">${esc(s.url)}</a>
+          </div>
+          <div class="source-actions">
+            <button class="btn-icon" title="Edit" onclick="openEditSource(${s._index})">&#9998;</button>
+            <button class="btn-icon btn-icon-danger" title="Remove" onclick="removeSource(${s._index})">&#128465;</button>
+          </div>
+        </div>`;
+      }
+
+      html += `</div></div>`;
+    }
+
+    html += `</div></div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function countryFlag(country) {
+  const flags = { Finland: '&#127467;&#127470;', Sweden: '&#127480;&#127466;', Denmark: '&#127465;&#127472;', Norway: '&#127475;&#127476;', Netherlands: '&#127475;&#127473;', Germany: '&#127465;&#127466;' };
+  return flags[country] || '&#127758;';
+}
+
+function openEditSource(index) {
+  const s = allSources[index];
+  document.getElementById('editSourceName').value = s.name || '';
+  document.getElementById('editSourceUrl').value = s.url || '';
+  document.getElementById('editSourceOrg').value = s.organization || '';
+  document.getElementById('editSourceCountry').value = s.country || 'Finland';
+  document.getElementById('editSourceType').value = s.type || 'university';
+  document.getElementById('editSourceIndex').value = index;
+  toggleModal('editSourceModal', true);
+}
+
+async function saveEditedSource() {
+  const index = parseInt(document.getElementById('editSourceIndex').value);
+  const updated = {
+    name: document.getElementById('editSourceName').value.trim(),
+    url: document.getElementById('editSourceUrl').value.trim(),
+    organization: document.getElementById('editSourceOrg').value.trim(),
+    country: document.getElementById('editSourceCountry').value,
+    type: document.getElementById('editSourceType').value,
+  };
+  if (!updated.name || !updated.url) {
+    showToast('Name and URL are required.', 'error');
+    return;
+  }
+  allSources[index] = updated;
+
+  try {
+    // Save all sources (replace full list)
+    const res = await fetch('/.netlify/functions/manage-sources', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'replace_all', sources: allSources })
+    });
+    if (!res.ok) throw new Error('Save failed');
+  } catch {
+    // Still updated locally
+  }
+
+  toggleModal('editSourceModal', false);
+  renderSources();
+  showToast('Source updated.', 'success');
+}
+
+function setupSourcesTabs() {
+  const tabs = document.querySelectorAll('.sources-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.sources-tab-panel').forEach(p => p.classList.remove('active'));
+      const target = tab.getAttribute('data-sources-tab');
+      const panelMap = { browse: 'panelBrowse', add: 'panelAdd', bulk: 'panelBulkTab' };
+      document.getElementById(panelMap[target]).classList.add('active');
+    });
+  });
+
+  // Source search filter
+  document.getElementById('sourceSearchInput').addEventListener('input', debounce(() => {
+    renderSourcesGrouped(document.getElementById('sourceSearchInput').value);
+  }, 200));
 }
 
 async function addSource() {
