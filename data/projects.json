@@ -1,16 +1,17 @@
 {
-  "last_updated": "2026-03-09T16:36:51.600087+00:00",
-  "total": 10,
+  "last_updated": "2026-03-09T16:47:27.537331+00:00",
+  "total": 17,
   "by_category": {
-    "semiconductors": 7,
-    "photonics": 5,
-    "advanced_materials": 6,
-    "equipment": 2,
-    "quantum": 2
+    "semiconductors": 10,
+    "photonics": 10,
+    "advanced_materials": 11,
+    "equipment": 4,
+    "quantum": 5
   },
   "by_country": {
-    "Finland": 7,
-    "Sweden": 3
+    "Finland": 10,
+    "Sweden": 5,
+    "Denmark": 2
   },
   "projects": [
     {
@@ -80,6 +81,39 @@
       "last_seen": "2026-03-09T16:36:51.600087+00:00"
     },
     {
+      "id": "9d5ab60bdb29",
+      "title": "\"A novel impedimetric detection of Brucella abortus bacteria using molecularly imprinted polydopamine polymer,\"",
+      "description": "",
+      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2041313",
+      "source_name": "KTH Research Portal",
+      "source_org": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "semiconductors",
+        "photonics",
+        "advanced_materials",
+        "equipment"
+      ],
+      "matched_keywords": [
+        "scanning electron",
+        "raman",
+        "afm",
+        "characterization",
+        "atomic force",
+        "spectroscopy",
+        "fabrication",
+        "polymer",
+        "microscopy"
+      ],
+      "relevance_score": 9,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
+    },
+    {
       "id": "b2c3d4e5f6g7",
       "title": "Wide Bandgap Semiconductor Materials for Power Electronics",
       "description": "Research programme investigating gallium nitride (GaN) and silicon carbide (SiC) based power semiconductor devices for energy-efficient power conversion. The project addresses crystal growth, device fabrication, and reliability testing of next-generation power devices.",
@@ -139,6 +173,69 @@
       "relevance_score": 8,
       "first_seen": "2026-03-09T07:00:00+00:00",
       "last_seen": "2026-03-09T07:00:00+00:00"
+    },
+    {
+      "id": "b6e7b0fdb103",
+      "title": "A new way to build tiny 3D devices from diverse materials",
+      "description": "",
+      "url": "https://www.kth.se/en/om/nyheter/lokala-nyheter/ny-teknik-for-3d-tillverkning-av-mikrosystem-i-flera-material-1.1458731",
+      "source_name": "KTH Research Portal",
+      "source_org": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "contact_name": "",
+      "contact_email": "infomaster@abe.kth.se",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "semiconductors",
+        "photonics",
+        "advanced_materials",
+        "quantum"
+      ],
+      "matched_keywords": [
+        "quantum",
+        "nanomaterials",
+        "fabrication",
+        "advanced materials",
+        "optical",
+        "laser",
+        "photonics",
+        "led"
+      ],
+      "relevance_score": 8,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
+    },
+    {
+      "id": "4c728f033c99",
+      "title": "Electronics and Nanoengineering",
+      "description": "",
+      "url": "https://www.aalto.fi/en/department-of-electronics-and-nanoengineering",
+      "source_name": "Aalto Innovation Services",
+      "source_org": "Aalto University",
+      "country": "Finland",
+      "contact_name": "",
+      "contact_email": "ville.viikari@aalto.fi",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "semiconductors",
+        "photonics",
+        "advanced_materials",
+        "quantum"
+      ],
+      "matched_keywords": [
+        "integrated photonics",
+        "quantum",
+        "integrated circuit",
+        "advanced materials",
+        "optoelectronics",
+        "thz",
+        "photonics"
+      ],
+      "relevance_score": 7,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
     },
     {
       "id": "c3d4e5f6g7h8",
@@ -252,6 +349,32 @@
       "last_seen": "2026-03-09T16:36:51.600087+00:00"
     },
     {
+      "id": "56e738f28ea2",
+      "title": "Quantum Campus Aarhus",
+      "description": "",
+      "url": "https://projects.au.dk/quantum",
+      "source_name": "Aarhus University Projects Database",
+      "source_org": "Aarhus University",
+      "country": "Denmark",
+      "contact_name": "",
+      "contact_email": "ove@chem.au.dk",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "photonics",
+        "quantum"
+      ],
+      "matched_keywords": [
+        "led",
+        "quantum",
+        "photonics",
+        "optics"
+      ],
+      "relevance_score": 4,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
+    },
+    {
       "id": "b4aaba31e45c",
       "title": "Polymeric Composite Materials",
       "description": "",
@@ -297,6 +420,76 @@
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:09:24.633676+00:00",
       "last_seen": "2026-03-09T16:36:51.600087+00:00"
+    },
+    {
+      "id": "4cdf290e4088",
+      "title": "Chemistry and Materials Science",
+      "description": "",
+      "url": "https://www.aalto.fi/en/department-of-chemistry-and-materials-science",
+      "source_name": "Aalto Innovation Services",
+      "source_org": "Aalto University",
+      "country": "Finland",
+      "contact_name": "",
+      "contact_email": "lasse.murtomaki@aalto.fi",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "photonics",
+        "equipment"
+      ],
+      "matched_keywords": [
+        "characterization",
+        "led"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
+    },
+    {
+      "id": "5cee222ba152",
+      "title": "Master's Programme in Materials Science and Technology",
+      "description": "",
+      "url": "https://www.lut.fi/en/studies/technology/masters-programmes-technology/masters-programme-materials-science-and-technology",
+      "source_name": "LUT University Research Projects",
+      "source_org": "LUT University",
+      "country": "Finland",
+      "contact_name": "",
+      "contact_email": "admission@lut.fi",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "advanced_materials"
+      ],
+      "matched_keywords": [
+        "composite",
+        "ceramics"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
+    },
+    {
+      "id": "5370e3caef4f",
+      "title": "Ceramics in Context",
+      "description": "",
+      "url": "https://projects.au.dk/ceramics-in-context",
+      "source_name": "Aarhus University Projects Database",
+      "source_org": "Aarhus University",
+      "country": "Denmark",
+      "contact_name": "",
+      "contact_email": "rubina.raja@cas.au.dk",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "advanced_materials"
+      ],
+      "matched_keywords": [
+        "ceramic",
+        "ceramics"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-03-09T16:47:27.537331+00:00",
+      "last_seen": "2026-03-09T16:47:27.537331+00:00"
     }
   ]
 }
