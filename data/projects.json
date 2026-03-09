@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-09T17:19:59.713785+00:00",
+  "last_updated": "2026-03-09T17:28:05.260064+00:00",
   "total": 7,
   "by_category": {
     "semiconductors": 3,
@@ -34,18 +34,18 @@
       ],
       "matched_keywords": [
         "atomic force",
-        "polymer",
-        "afm",
-        "spectroscopy",
         "scanning electron",
-        "raman",
-        "fabrication",
+        "polymer",
         "microscopy",
-        "characterization"
+        "spectroscopy",
+        "fabrication",
+        "afm",
+        "characterization",
+        "raman"
       ],
       "relevance_score": 9,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     },
     {
@@ -67,18 +67,18 @@
         "quantum"
       ],
       "matched_keywords": [
-        "led",
+        "laser",
         "photonics",
-        "quantum",
-        "nanomaterials",
-        "optical",
         "advanced materials",
-        "fabrication",
-        "laser"
+        "quantum",
+        "optical",
+        "led",
+        "nanomaterials",
+        "fabrication"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     },
     {
@@ -100,17 +100,17 @@
         "quantum"
       ],
       "matched_keywords": [
-        "thz",
+        "optoelectronics",
         "integrated photonics",
         "photonics",
-        "optoelectronics",
-        "quantum",
         "advanced materials",
-        "integrated circuit"
+        "integrated circuit",
+        "quantum",
+        "thz"
       ],
       "relevance_score": 7,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     },
     {
@@ -131,13 +131,13 @@
       ],
       "matched_keywords": [
         "photonics",
-        "quantum",
         "optics",
-        "led"
+        "led",
+        "quantum"
       ],
       "relevance_score": 4,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     },
     {
@@ -156,12 +156,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "ceramic"
+        "ceramic",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     },
     {
@@ -186,7 +186,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     },
     {
@@ -205,12 +205,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "composite"
+        "composite",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-09T17:19:59.713785+00:00",
+      "last_seen": "2026-03-09T17:28:05.260064+00:00",
       "miss_count": 0
     }
   ]
