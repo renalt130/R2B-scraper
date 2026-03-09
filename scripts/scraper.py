@@ -227,6 +227,14 @@ def extract_projects_generic(soup, base_url, source):
             '/fi/$', '/sv/$', '/da/$', 'search', 'staff', 'people',
             'news', 'event', 'blog', 'about-us', 'career',
         ]
+        # Link text patterns that indicate navigation, not project names
+        NAV_TEXT_PATTERNS = re.compile(
+            r'^(move to page|go to|skip to|jump to|navigate to|'
+            r'next|previous|back|page \d|show more|load more|'
+            r'read more|see all|view all|see more|expand|collapse|'
+            r'click here|learn more|download|log in|sign up)',
+            re.IGNORECASE
+        )
 
         # If the SOURCE URL itself is a project listing page, be more inclusive
         # with links — every internal subpage is likely a project.
@@ -246,6 +254,9 @@ def extract_projects_generic(soup, base_url, source):
             full_url_lower = full_url.lower()
             # Skip nav, footer, social, image, utility links
             if any(skip in href_lower for skip in SKIP_LINK_PATTERNS):
+                continue
+            # Skip navigation-style link text ("Move to page...", "Read more", etc.)
+            if NAV_TEXT_PATTERNS.match(text):
                 continue
 
             # Determine if this link is a project link
@@ -351,6 +362,19 @@ def classify_project(title, description, detail_text=''):
     return qualifies, categories, unique_keywords, score
 
 
+TITLE_CLEANUP_RE = re.compile(
+    r'^(move to page\s*|go to\s*|navigate to\s*)',
+    re.IGNORECASE
+)
+
+def clean_title(title):
+    """Strip navigation prefixes and clean up project titles."""
+    title = TITLE_CLEANUP_RE.sub('', title).strip()
+    # Remove leading/trailing punctuation artifacts
+    title = title.strip('|·•–—-:')
+    return title.strip()
+
+
 def make_id(title, url):
     """Generate a stable ID for deduplication."""
     raw = f"{title.lower().strip()}|{url.lower().strip()}"
@@ -400,6 +424,10 @@ def main():
         print(f"  Found {len(raw_projects)} raw project(s)")
 
         for raw in raw_projects:
+            # Clean up title (strip navigation prefixes like "Move to page")
+            raw['title'] = clean_title(raw['title'])
+            if not raw['title'] or len(raw['title']) < 3:
+                continue
             pid = make_id(raw['title'], raw['url'])
 
             # ── Step 1: Quick relevance pre-check on title+description ──
