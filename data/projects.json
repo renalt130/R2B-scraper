@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-16T08:04:22.928932+00:00",
+  "last_updated": "2026-03-23T07:58:14.816040+00:00",
   "total": 7,
   "by_category": {
     "semiconductors": 3,
@@ -46,7 +46,7 @@
       "relevance_score": 9,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
       "last_seen": "2026-03-09T17:28:05.260064+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "b6e7b0fdb103",
@@ -67,18 +67,18 @@
         "quantum"
       ],
       "matched_keywords": [
-        "advanced materials",
-        "photonics",
-        "optical",
-        "nanomaterials",
         "fabrication",
+        "optical",
+        "advanced materials",
         "led",
+        "nanomaterials",
         "laser",
+        "photonics",
         "quantum"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-03-16T08:04:22.928932+00:00",
+      "last_seen": "2026-03-23T07:58:14.816040+00:00",
       "miss_count": 0
     },
     {
@@ -100,17 +100,17 @@
         "quantum"
       ],
       "matched_keywords": [
-        "advanced materials",
-        "photonics",
-        "optoelectronics",
-        "integrated photonics",
+        "integrated circuit",
         "quantum",
-        "thz",
-        "integrated circuit"
+        "advanced materials",
+        "integrated photonics",
+        "optoelectronics",
+        "photonics",
+        "thz"
       ],
       "relevance_score": 7,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-16T08:04:22.928932+00:00",
+      "last_seen": "2026-03-23T07:58:14.816040+00:00",
       "miss_count": 0
     },
     {
@@ -137,7 +137,7 @@
       ],
       "relevance_score": 4,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-16T08:04:22.928932+00:00",
+      "last_seen": "2026-03-23T07:58:14.816040+00:00",
       "miss_count": 0
     },
     {
@@ -161,7 +161,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-03-16T08:04:22.928932+00:00",
+      "last_seen": "2026-03-23T07:58:14.816040+00:00",
       "miss_count": 0
     },
     {
@@ -186,7 +186,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-16T08:04:22.928932+00:00",
+      "last_seen": "2026-03-23T07:58:14.816040+00:00",
       "miss_count": 0
     },
     {
@@ -205,12 +205,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "composite",
-        "ceramics"
+        "ceramics",
+        "composite"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-16T08:04:22.928932+00:00",
+      "last_seen": "2026-03-23T07:58:14.816040+00:00",
       "miss_count": 0
     }
   ]
