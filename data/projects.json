@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30T08:18:56.762022+00:00",
+  "last_updated": "2026-04-06T08:19:58.387835+00:00",
   "total": 9,
   "by_category": {
     "semiconductors": 4,
@@ -9,19 +9,19 @@
     "quantum": 3
   },
   "by_country": {
-    "Sweden": 4,
-    "Finland": 3,
+    "Finland": 4,
+    "Sweden": 3,
     "Denmark": 2
   },
   "projects": [
     {
-      "id": "9d5ab60bdb29",
-      "title": "\"A novel impedimetric detection of Brucella abortus bacteria using molecularly imprinted polydopamine polymer,\"",
+      "id": "344bd8fe1920",
+      "title": "Doctoral defence of Maaz Ahmed Qureshi, MSc, 15.4.2026: Waveguide-integrated photodetectors using two-dimensional semiconductor materials on silicon nitride photonic chips",
       "description": "",
-      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2041313",
-      "source_name": "KTH Research Portal",
-      "source_org": "KTH Royal Institute of Technology",
-      "country": "Sweden",
+      "url": "https://www.uef.fi/en/article/doctoral-defence-of-maaz-ahmed-qureshi-msc-1542026-waveguide-integrated-photodetectors-using-two",
+      "source_name": "University of Eastern Finland Research",
+      "source_org": "University of Eastern Finland",
+      "country": "Finland",
       "contact_name": "",
       "contact_email": "",
       "is_relevant": true,
@@ -33,20 +33,31 @@
         "equipment"
       ],
       "matched_keywords": [
-        "atomic force",
-        "scanning electron",
-        "polymer",
-        "microscopy",
-        "spectroscopy",
-        "fabrication",
+        "2d material",
+        "chips",
+        "silicon",
+        "deposition",
+        "lithography",
+        "chip",
         "afm",
+        "plasma",
+        "raman",
+        "waveguide",
+        "semiconductor",
+        "optoelectronics",
+        "photonic",
+        "integrated photonics",
+        "sem",
+        "cleanroom",
+        "etching",
         "characterization",
-        "raman"
+        "fabrication",
+        "optical"
       ],
-      "relevance_score": 9,
-      "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-09T17:28:05.260064+00:00",
-      "miss_count": 3
+      "relevance_score": 20,
+      "first_seen": "2026-04-06T08:19:58.387835+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
+      "miss_count": 0
     },
     {
       "id": "b6e7b0fdb103",
@@ -67,18 +78,18 @@
         "quantum"
       ],
       "matched_keywords": [
-        "led",
-        "optical",
-        "advanced materials",
+        "nanomaterials",
         "laser",
         "quantum",
-        "nanomaterials",
+        "led",
         "fabrication",
-        "photonics"
+        "photonics",
+        "advanced materials",
+        "optical"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -100,17 +111,17 @@
         "quantum"
       ],
       "matched_keywords": [
-        "integrated circuit",
-        "advanced materials",
         "thz",
+        "integrated circuit",
         "quantum",
-        "integrated photonics",
         "optoelectronics",
-        "photonics"
+        "integrated photonics",
+        "photonics",
+        "advanced materials"
       ],
       "relevance_score": 7,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -130,14 +141,14 @@
         "quantum"
       ],
       "matched_keywords": [
-        "led",
-        "optics",
         "quantum",
-        "photonics"
+        "photonics",
+        "led",
+        "optics"
       ],
       "relevance_score": 4,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -159,13 +170,13 @@
       ],
       "matched_keywords": [
         "waveguide",
+        "chip",
         "silicon",
-        "equipment",
-        "chip"
+        "equipment"
       ],
       "relevance_score": 4,
       "first_seen": "2026-03-30T08:18:56.762022+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -184,12 +195,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "ceramic"
+        "ceramic",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -214,7 +225,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -233,12 +244,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "composite"
+        "composite",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     },
     {
@@ -257,12 +268,12 @@
         "photonics"
       ],
       "matched_keywords": [
-        "ultraviolet",
-        "uv"
+        "uv",
+        "ultraviolet"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-30T08:18:56.762022+00:00",
-      "last_seen": "2026-03-30T08:18:56.762022+00:00",
+      "last_seen": "2026-04-06T08:19:58.387835+00:00",
       "miss_count": 0
     }
   ]
