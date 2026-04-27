@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-04-20T09:04:48.066955+00:00",
-  "total": 9,
+  "last_updated": "2026-04-27T09:13:53.603953+00:00",
+  "total": 10,
   "by_category": {
     "semiconductors": 5,
     "photonics": 6,
-    "advanced_materials": 6,
+    "advanced_materials": 7,
     "equipment": 3,
     "quantum": 3
   },
   "by_country": {
     "Finland": 4,
-    "Sweden": 3,
+    "Sweden": 4,
     "Denmark": 2
   },
   "projects": [
@@ -57,7 +57,7 @@
       "relevance_score": 20,
       "first_seen": "2026-04-06T08:19:58.387835+00:00",
       "last_seen": "2026-04-06T08:19:58.387835+00:00",
-      "miss_count": 2
+      "miss_count": 3
     },
     {
       "id": "b6e7b0fdb103",
@@ -78,18 +78,18 @@
         "quantum"
       ],
       "matched_keywords": [
-        "fabrication",
-        "optical",
-        "quantum",
-        "advanced materials",
-        "led",
-        "laser",
         "photonics",
+        "laser",
+        "led",
+        "advanced materials",
+        "fabrication",
+        "quantum",
+        "optical",
         "nanomaterials"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-04-20T09:04:48.066955+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
       "miss_count": 0
     },
     {
@@ -111,18 +111,47 @@
         "quantum"
       ],
       "matched_keywords": [
-        "integrated photonics",
+        "photonics",
+        "chip",
+        "integrated circuit",
+        "advanced materials",
         "thz",
         "quantum",
-        "advanced materials",
-        "integrated circuit",
-        "chip",
-        "optoelectronics",
-        "photonics"
+        "integrated photonics",
+        "optoelectronics"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-04-20T09:04:48.066955+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
+      "miss_count": 0
+    },
+    {
+      "id": "44b3c6a70b3c",
+      "title": "Intrinsic Self-Sensing in Advanced Composites Enabled by Carbon Nanostructures",
+      "description": "",
+      "url": "https://www.kth.se/en/forskning/kalender/intrinsic-self-sensing-in-advanced-composites-enabled-by-carbon-nanostructures-1.1468336?date=2026-05-05&orgdate=2026-04-27&length=1&orglength=0",
+      "source_name": "KTH Research Portal",
+      "source_org": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "advanced_materials"
+      ],
+      "matched_keywords": [
+        "composites",
+        "graphene",
+        "coatings",
+        "composite",
+        "polymer",
+        "carbon nanotube",
+        "nanomaterial"
+      ],
+      "relevance_score": 7,
+      "first_seen": "2026-04-27T09:13:53.603953+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
       "miss_count": 0
     },
     {
@@ -151,7 +180,7 @@
       "relevance_score": 4,
       "first_seen": "2026-03-30T08:18:56.762022+00:00",
       "last_seen": "2026-04-13T08:58:37.184496+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "56e738f28ea2",
@@ -171,13 +200,13 @@
         "quantum"
       ],
       "matched_keywords": [
+        "quantum",
         "chip",
-        "photonics",
-        "quantum"
+        "photonic"
       ],
       "relevance_score": 3,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-04-20T09:04:48.066955+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
       "miss_count": 0
     },
     {
@@ -196,12 +225,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "ceramic"
+        "ceramic",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-04-20T09:04:48.066955+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
       "miss_count": 0
     },
     {
@@ -226,7 +255,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-04-20T09:04:48.066955+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
       "miss_count": 0
     },
     {
@@ -245,12 +274,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "composite"
+        "composite",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-04-20T09:04:48.066955+00:00",
+      "last_seen": "2026-04-27T09:13:53.603953+00:00",
       "miss_count": 0
     },
     {
@@ -275,7 +304,7 @@
       "relevance_score": 2,
       "first_seen": "2026-03-30T08:18:56.762022+00:00",
       "last_seen": "2026-04-13T08:58:37.184496+00:00",
-      "miss_count": 1
+      "miss_count": 2
     }
   ]
 }
