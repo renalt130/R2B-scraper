@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-05-04T09:12:41.589847+00:00",
-  "total": 11,
+  "last_updated": "2026-05-11T10:31:07.309316+00:00",
+  "total": 10,
   "by_category": {
-    "semiconductors": 4,
-    "photonics": 5,
+    "semiconductors": 3,
+    "photonics": 4,
     "advanced_materials": 7,
     "equipment": 2,
     "quantum": 4
   },
   "by_country": {
-    "Sweden": 6,
+    "Sweden": 5,
     "Finland": 3,
     "Denmark": 2
   },
@@ -45,7 +45,7 @@
       "relevance_score": 8,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
       "last_seen": "2026-04-27T09:13:53.603953+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "4c728f033c99",
@@ -67,17 +67,17 @@
       ],
       "matched_keywords": [
         "optoelectronics",
-        "chip",
         "integrated photonics",
         "photonics",
-        "thz",
-        "advanced materials",
         "integrated circuit",
-        "quantum"
+        "quantum",
+        "chip",
+        "advanced materials",
+        "thz"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-05-04T09:12:41.589847+00:00",
+      "last_seen": "2026-05-11T10:31:07.309316+00:00",
       "miss_count": 0
     },
     {
@@ -107,7 +107,7 @@
       "relevance_score": 7,
       "first_seen": "2026-04-27T09:13:53.603953+00:00",
       "last_seen": "2026-04-27T09:13:53.603953+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "024b5553d3e8",
@@ -136,35 +136,7 @@
       "relevance_score": 7,
       "first_seen": "2026-05-04T09:12:41.589847+00:00",
       "last_seen": "2026-05-04T09:12:41.589847+00:00",
-      "miss_count": 0
-    },
-    {
-      "id": "75862659f9e5",
-      "title": "\"A Low-Loss Silicon-Micromachined Waveguide Crossover Switch for Spaceborne Radiometer Calibration Circuits at 163.6–182.55GHz,\"",
-      "description": "",
-      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2048572",
-      "source_name": "KTH Research Portal",
-      "source_org": "KTH Royal Institute of Technology",
-      "country": "Sweden",
-      "contact_name": "",
-      "contact_email": "",
-      "is_relevant": true,
-      "status": "active",
-      "categories": [
-        "semiconductors",
-        "photonics",
-        "equipment"
-      ],
-      "matched_keywords": [
-        "waveguide",
-        "silicon",
-        "chip",
-        "equipment"
-      ],
-      "relevance_score": 4,
-      "first_seen": "2026-03-30T08:18:56.762022+00:00",
-      "last_seen": "2026-04-13T08:58:37.184496+00:00",
-      "miss_count": 3
+      "miss_count": 1
     },
     {
       "id": "56e738f28ea2",
@@ -191,7 +163,7 @@
       "relevance_score": 3,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
       "last_seen": "2026-05-04T09:12:41.589847+00:00",
-      "miss_count": 0
+      "miss_count": 1
     },
     {
       "id": "5370e3caef4f",
@@ -214,7 +186,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-05-04T09:12:41.589847+00:00",
+      "last_seen": "2026-05-11T10:31:07.309316+00:00",
       "miss_count": 0
     },
     {
@@ -234,12 +206,12 @@
         "equipment"
       ],
       "matched_keywords": [
-        "advanced materials",
-        "characterization"
+        "characterization",
+        "advanced materials"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-05-04T09:12:41.589847+00:00",
+      "last_seen": "2026-05-11T10:31:07.309316+00:00",
       "miss_count": 0
     },
     {
@@ -258,37 +230,13 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "composite"
+        "composite",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-05-04T09:12:41.589847+00:00",
+      "last_seen": "2026-05-11T10:31:07.309316+00:00",
       "miss_count": 0
-    },
-    {
-      "id": "87c22bdefa96",
-      "title": "\"A novel magnetic AC/bentonite/Fe3O4/CeO2nanocomposite catalyst for photocatalytic degradation of persistent chlorinated pesticides in water,\"",
-      "description": "",
-      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2047867",
-      "source_name": "KTH Research Portal",
-      "source_org": "KTH Royal Institute of Technology",
-      "country": "Sweden",
-      "contact_name": "",
-      "contact_email": "",
-      "is_relevant": true,
-      "status": "active",
-      "categories": [
-        "photonics"
-      ],
-      "matched_keywords": [
-        "ultraviolet",
-        "uv"
-      ],
-      "relevance_score": 2,
-      "first_seen": "2026-03-30T08:18:56.762022+00:00",
-      "last_seen": "2026-04-13T08:58:37.184496+00:00",
-      "miss_count": 3
     },
     {
       "id": "db54ed0e761e",
@@ -312,6 +260,31 @@
       "relevance_score": 2,
       "first_seen": "2026-05-04T09:12:41.589847+00:00",
       "last_seen": "2026-05-04T09:12:41.589847+00:00",
+      "miss_count": 1
+    },
+    {
+      "id": "2f03bb9d3b51",
+      "title": "\"A lack of carbon at Io and its plasma torus,\"",
+      "description": "",
+      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2057115",
+      "source_name": "KTH Research Portal",
+      "source_org": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "photonics",
+        "equipment"
+      ],
+      "matched_keywords": [
+        "plasma",
+        "ultraviolet"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-05-11T10:31:07.309316+00:00",
+      "last_seen": "2026-05-11T10:31:07.309316+00:00",
       "miss_count": 0
     }
   ]
