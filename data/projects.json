@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-11T10:31:07.309316+00:00",
+  "last_updated": "2026-05-18T11:00:47.361546+00:00",
   "total": 10,
   "by_category": {
     "semiconductors": 3,
@@ -45,7 +45,7 @@
       "relevance_score": 8,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
       "last_seen": "2026-04-27T09:13:53.603953+00:00",
-      "miss_count": 2
+      "miss_count": 3
     },
     {
       "id": "4c728f033c99",
@@ -66,18 +66,18 @@
         "quantum"
       ],
       "matched_keywords": [
-        "optoelectronics",
-        "integrated photonics",
         "photonics",
-        "integrated circuit",
-        "quantum",
-        "chip",
+        "thz",
+        "integrated photonics",
         "advanced materials",
-        "thz"
+        "optoelectronics",
+        "integrated circuit",
+        "chip",
+        "quantum"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-05-11T10:31:07.309316+00:00",
+      "last_seen": "2026-05-18T11:00:47.361546+00:00",
       "miss_count": 0
     },
     {
@@ -107,7 +107,7 @@
       "relevance_score": 7,
       "first_seen": "2026-04-27T09:13:53.603953+00:00",
       "last_seen": "2026-04-27T09:13:53.603953+00:00",
-      "miss_count": 2
+      "miss_count": 3
     },
     {
       "id": "024b5553d3e8",
@@ -136,7 +136,7 @@
       "relevance_score": 7,
       "first_seen": "2026-05-04T09:12:41.589847+00:00",
       "last_seen": "2026-05-04T09:12:41.589847+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "56e738f28ea2",
@@ -163,7 +163,7 @@
       "relevance_score": 3,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
       "last_seen": "2026-05-04T09:12:41.589847+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "5370e3caef4f",
@@ -186,7 +186,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-05-11T10:31:07.309316+00:00",
+      "last_seen": "2026-05-18T11:00:47.361546+00:00",
       "miss_count": 0
     },
     {
@@ -206,12 +206,12 @@
         "equipment"
       ],
       "matched_keywords": [
-        "characterization",
-        "advanced materials"
+        "advanced materials",
+        "characterization"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-05-11T10:31:07.309316+00:00",
+      "last_seen": "2026-05-18T11:00:47.361546+00:00",
       "miss_count": 0
     },
     {
@@ -235,7 +235,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-05-11T10:31:07.309316+00:00",
+      "last_seen": "2026-05-18T11:00:47.361546+00:00",
       "miss_count": 0
     },
     {
@@ -260,7 +260,7 @@
       "relevance_score": 2,
       "first_seen": "2026-05-04T09:12:41.589847+00:00",
       "last_seen": "2026-05-04T09:12:41.589847+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "2f03bb9d3b51",
@@ -279,12 +279,12 @@
         "equipment"
       ],
       "matched_keywords": [
-        "plasma",
-        "ultraviolet"
+        "ultraviolet",
+        "plasma"
       ],
       "relevance_score": 2,
       "first_seen": "2026-05-11T10:31:07.309316+00:00",
-      "last_seen": "2026-05-11T10:31:07.309316+00:00",
+      "last_seen": "2026-05-18T11:00:47.361546+00:00",
       "miss_count": 0
     }
   ]
