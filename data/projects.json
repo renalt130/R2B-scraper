@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-06-01T12:30:50.456886+00:00",
-  "total": 9,
+  "last_updated": "2026-06-08T11:50:43.376354+00:00",
+  "total": 10,
   "by_category": {
-    "semiconductors": 5,
-    "photonics": 5,
-    "advanced_materials": 4,
-    "equipment": 3,
+    "semiconductors": 6,
+    "photonics": 6,
+    "advanced_materials": 5,
+    "equipment": 4,
     "quantum": 3
   },
   "by_country": {
     "Sweden": 5,
-    "Finland": 3,
+    "Finland": 4,
     "Denmark": 1
   },
   "projects": [
@@ -45,7 +45,7 @@
       "relevance_score": 9,
       "first_seen": "2026-05-25T11:05:30.660330+00:00",
       "last_seen": "2026-05-25T11:05:30.660330+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "4c728f033c99",
@@ -66,18 +66,51 @@
         "quantum"
       ],
       "matched_keywords": [
-        "chip",
+        "advanced materials",
         "integrated circuit",
         "photonics",
-        "advanced materials",
         "optoelectronics",
-        "quantum",
         "integrated photonics",
-        "thz"
+        "quantum",
+        "thz",
+        "chip"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-01T12:30:50.456886+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "miss_count": 0
+    },
+    {
+      "id": "169b5ac560e9",
+      "title": "Doctoral defence of Hamza Rehman, MSc, 12.6.2026: Nanocarbon-based terahertz components",
+      "description": "",
+      "url": "https://www.uef.fi/en/article/doctoral-defence-of-hamza-rehman-msc-1262026-nanocarbon-based-terahertz-components",
+      "source_name": "University of Eastern Finland Research",
+      "source_org": "University of Eastern Finland",
+      "country": "Finland",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "semiconductors",
+        "photonics",
+        "advanced_materials",
+        "equipment"
+      ],
+      "matched_keywords": [
+        "graphene",
+        "spectroscopy",
+        "cmos",
+        "cvd",
+        "terahertz",
+        "inspection",
+        "thz",
+        "lithography"
+      ],
+      "relevance_score": 8,
+      "first_seen": "2026-06-08T11:50:43.376354+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
       "miss_count": 0
     },
     {
@@ -107,7 +140,7 @@
       "relevance_score": 5,
       "first_seen": "2026-05-25T11:05:30.660330+00:00",
       "last_seen": "2026-05-25T11:05:30.660330+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "4f3040f37fcd",
@@ -127,40 +160,15 @@
         "quantum"
       ],
       "matched_keywords": [
-        "chip",
-        "led",
         "silicon",
+        "photonic",
+        "led",
         "quantum",
-        "photonic"
+        "chip"
       ],
       "relevance_score": 5,
       "first_seen": "2026-06-01T12:30:50.456886+00:00",
-      "last_seen": "2026-06-01T12:30:50.456886+00:00",
-      "miss_count": 0
-    },
-    {
-      "id": "1aa396d5244c",
-      "title": "\"A CMOS-Compatible Heterogeneous 3-D Integration Platform for Silicon Nanoelectromechanical Switches,\"",
-      "description": "",
-      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2062937",
-      "source_name": "KTH Research Portal",
-      "source_org": "KTH Royal Institute of Technology",
-      "country": "Sweden",
-      "contact_name": "",
-      "contact_email": "",
-      "is_relevant": true,
-      "status": "active",
-      "categories": [
-        "semiconductors"
-      ],
-      "matched_keywords": [
-        "cmos",
-        "silicon",
-        "fab"
-      ],
-      "relevance_score": 3,
-      "first_seen": "2026-06-01T12:30:50.456886+00:00",
-      "last_seen": "2026-06-01T12:30:50.456886+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
       "miss_count": 0
     },
     {
@@ -179,12 +187,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramics",
-        "ceramic"
+        "ceramic",
+        "ceramics"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-06-01T12:30:50.456886+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
       "miss_count": 0
     },
     {
@@ -209,7 +217,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-01T12:30:50.456886+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
       "miss_count": 0
     },
     {
@@ -233,7 +241,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-01T12:30:50.456886+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
       "miss_count": 0
     },
     {
@@ -259,7 +267,31 @@
       "relevance_score": 2,
       "first_seen": "2026-05-11T10:31:07.309316+00:00",
       "last_seen": "2026-05-18T11:00:47.361546+00:00",
-      "miss_count": 2
+      "miss_count": 3
+    },
+    {
+      "id": "1aa396d5244c",
+      "title": "\"A CMOS-Compatible Heterogeneous 3-D Integration Platform for Silicon Nanoelectromechanical Switches,\"",
+      "description": "",
+      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2062937",
+      "source_name": "KTH Research Portal",
+      "source_org": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "semiconductors"
+      ],
+      "matched_keywords": [
+        "silicon",
+        "cmos"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-06-01T12:30:50.456886+00:00",
+      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "miss_count": 0
     }
   ]
 }
