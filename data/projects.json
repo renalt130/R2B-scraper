@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-06-08T11:50:43.376354+00:00",
-  "total": 10,
+  "last_updated": "2026-06-15T13:08:20.232762+00:00",
+  "total": 11,
   "by_category": {
     "semiconductors": 6,
     "photonics": 6,
     "advanced_materials": 5,
     "equipment": 4,
-    "quantum": 3
+    "quantum": 4
   },
   "by_country": {
     "Sweden": 5,
     "Finland": 4,
-    "Denmark": 1
+    "Denmark": 2
   },
   "projects": [
     {
@@ -45,7 +45,7 @@
       "relevance_score": 9,
       "first_seen": "2026-05-25T11:05:30.660330+00:00",
       "last_seen": "2026-05-25T11:05:30.660330+00:00",
-      "miss_count": 2
+      "miss_count": 3
     },
     {
       "id": "4c728f033c99",
@@ -67,17 +67,17 @@
       ],
       "matched_keywords": [
         "advanced materials",
-        "integrated circuit",
-        "photonics",
-        "optoelectronics",
         "integrated photonics",
-        "quantum",
+        "photonics",
+        "integrated circuit",
+        "chip",
+        "optoelectronics",
         "thz",
-        "chip"
+        "quantum"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
       "miss_count": 0
     },
     {
@@ -111,7 +111,7 @@
       "relevance_score": 8,
       "first_seen": "2026-06-08T11:50:43.376354+00:00",
       "last_seen": "2026-06-08T11:50:43.376354+00:00",
-      "miss_count": 0
+      "miss_count": 1
     },
     {
       "id": "62f6e7983dd4",
@@ -140,7 +140,7 @@
       "relevance_score": 5,
       "first_seen": "2026-05-25T11:05:30.660330+00:00",
       "last_seen": "2026-05-25T11:05:30.660330+00:00",
-      "miss_count": 2
+      "miss_count": 3
     },
     {
       "id": "4f3040f37fcd",
@@ -160,15 +160,41 @@
         "quantum"
       ],
       "matched_keywords": [
-        "silicon",
-        "photonic",
         "led",
-        "quantum",
-        "chip"
+        "photonic",
+        "chip",
+        "silicon",
+        "quantum"
       ],
       "relevance_score": 5,
       "first_seen": "2026-06-01T12:30:50.456886+00:00",
-      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "miss_count": 0
+    },
+    {
+      "id": "56e738f28ea2",
+      "title": "Quantum Campus Aarhus",
+      "description": "",
+      "url": "https://projects.au.dk/quantum",
+      "source_name": "Aarhus University Projects Database",
+      "source_org": "Aarhus University",
+      "country": "Denmark",
+      "contact_name": "",
+      "contact_email": "lrlp@inano.au.dk",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "photonics",
+        "quantum"
+      ],
+      "matched_keywords": [
+        "photonics",
+        "quantum",
+        "optics"
+      ],
+      "relevance_score": 3,
+      "first_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
       "miss_count": 0
     },
     {
@@ -187,12 +213,12 @@
         "advanced_materials"
       ],
       "matched_keywords": [
-        "ceramic",
-        "ceramics"
+        "ceramics",
+        "ceramic"
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
       "miss_count": 0
     },
     {
@@ -217,7 +243,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
       "miss_count": 0
     },
     {
@@ -241,33 +267,8 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
       "miss_count": 0
-    },
-    {
-      "id": "2f03bb9d3b51",
-      "title": "\"A lack of carbon at Io and its plasma torus,\"",
-      "description": "",
-      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2057115",
-      "source_name": "KTH Research Portal",
-      "source_org": "KTH Royal Institute of Technology",
-      "country": "Sweden",
-      "contact_name": "",
-      "contact_email": "",
-      "is_relevant": true,
-      "status": "active",
-      "categories": [
-        "photonics",
-        "equipment"
-      ],
-      "matched_keywords": [
-        "ultraviolet",
-        "plasma"
-      ],
-      "relevance_score": 2,
-      "first_seen": "2026-05-11T10:31:07.309316+00:00",
-      "last_seen": "2026-05-18T11:00:47.361546+00:00",
-      "miss_count": 3
     },
     {
       "id": "1aa396d5244c",
@@ -291,6 +292,30 @@
       "relevance_score": 2,
       "first_seen": "2026-06-01T12:30:50.456886+00:00",
       "last_seen": "2026-06-08T11:50:43.376354+00:00",
+      "miss_count": 1
+    },
+    {
+      "id": "157f293c6845",
+      "title": "\"Bed material aging in industrial-scale fast pyrolysis of biomass: Effects of ash and particle morphology on bio-oil yield and composition,\"",
+      "description": "",
+      "url": "http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:2067471",
+      "source_name": "KTH Research Portal",
+      "source_org": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "equipment"
+      ],
+      "matched_keywords": [
+        "detector",
+        "sem"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-15T13:08:20.232762+00:00",
       "miss_count": 0
     }
   ]
