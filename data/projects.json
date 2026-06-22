@@ -1,52 +1,19 @@
 {
-  "last_updated": "2026-06-15T13:08:20.232762+00:00",
+  "last_updated": "2026-06-22T12:44:18.807126+00:00",
   "total": 11,
   "by_category": {
-    "semiconductors": 6,
-    "photonics": 6,
-    "advanced_materials": 5,
-    "equipment": 4,
-    "quantum": 4
+    "semiconductors": 5,
+    "photonics": 5,
+    "advanced_materials": 6,
+    "equipment": 5,
+    "quantum": 3
   },
   "by_country": {
-    "Sweden": 5,
-    "Finland": 4,
+    "Finland": 5,
+    "Sweden": 4,
     "Denmark": 2
   },
   "projects": [
-    {
-      "id": "2bef5be0207a",
-      "title": "Silicon Micromachined Multilayer Waveguide Components and Reconfigurable Systems for  Sub-Terahertz Applications",
-      "description": "",
-      "url": "https://www.kth.se/en/forskning/kalender/silicon-micromachined-multilayer-waveguide-components-and-reconfigurable-systems-for-sub-terahertz-applications-1.1472990?date=2026-05-29&orgdate=2026-05-25&length=1&orglength=0",
-      "source_name": "KTH Research Portal",
-      "source_org": "KTH Royal Institute of Technology",
-      "country": "Sweden",
-      "contact_name": "",
-      "contact_email": "biblioteket@kth.se",
-      "is_relevant": true,
-      "status": "active",
-      "categories": [
-        "semiconductors",
-        "photonics",
-        "equipment"
-      ],
-      "matched_keywords": [
-        "mems",
-        "chip",
-        "etching",
-        "silicon",
-        "characterization",
-        "terahertz",
-        "thz",
-        "waveguide",
-        "fabrication"
-      ],
-      "relevance_score": 9,
-      "first_seen": "2026-05-25T11:05:30.660330+00:00",
-      "last_seen": "2026-05-25T11:05:30.660330+00:00",
-      "miss_count": 3
-    },
     {
       "id": "4c728f033c99",
       "title": "Electronics and Nanoengineering",
@@ -66,18 +33,18 @@
         "quantum"
       ],
       "matched_keywords": [
-        "advanced materials",
         "integrated photonics",
-        "photonics",
-        "integrated circuit",
-        "chip",
         "optoelectronics",
+        "quantum",
         "thz",
-        "quantum"
+        "photonics",
+        "chip",
+        "integrated circuit",
+        "advanced materials"
       ],
       "relevance_score": 8,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
       "miss_count": 0
     },
     {
@@ -111,36 +78,38 @@
       "relevance_score": 8,
       "first_seen": "2026-06-08T11:50:43.376354+00:00",
       "last_seen": "2026-06-08T11:50:43.376354+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
-      "id": "62f6e7983dd4",
-      "title": "Read the article",
+      "id": "46249dc4b400",
+      "title": "Advances in Nanoelectromechanical Switch Integration",
       "description": "",
-      "url": "https://www.kth.se/en/om/nyheter/centrala-nyheter/new-chip-offers-way-to-make-use-of-quantum-system-imperfections-1.1476233",
+      "url": "https://www.kth.se/en/forskning/kalender/advances-in-nanoelectromechanical-switch-integration-1.1479665?date=2026-08-19&orgdate=2026-06-22&length=1&orglength=0",
       "source_name": "KTH Research Portal",
       "source_org": "KTH Royal Institute of Technology",
       "country": "Sweden",
       "contact_name": "",
-      "contact_email": "redaktion@kth.se",
+      "contact_email": "biblioteket@kth.se",
       "is_relevant": true,
       "status": "active",
       "categories": [
         "semiconductors",
         "photonics",
-        "quantum"
+        "equipment"
       ],
       "matched_keywords": [
-        "quantum",
-        "photonic",
-        "led",
+        "fab",
+        "cmos",
+        "silicon photonics",
+        "silicon",
+        "fabrication",
         "chip",
-        "silicon"
+        "characterization"
       ],
-      "relevance_score": 5,
-      "first_seen": "2026-05-25T11:05:30.660330+00:00",
-      "last_seen": "2026-05-25T11:05:30.660330+00:00",
-      "miss_count": 3
+      "relevance_score": 7,
+      "first_seen": "2026-06-22T12:44:18.807126+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
+      "miss_count": 0
     },
     {
       "id": "4f3040f37fcd",
@@ -162,13 +131,13 @@
       "matched_keywords": [
         "led",
         "photonic",
-        "chip",
+        "quantum",
         "silicon",
-        "quantum"
+        "chip"
       ],
       "relevance_score": 5,
       "first_seen": "2026-06-01T12:30:50.456886+00:00",
-      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
       "miss_count": 0
     },
     {
@@ -185,16 +154,19 @@
       "status": "active",
       "categories": [
         "photonics",
+        "equipment",
         "quantum"
       ],
       "matched_keywords": [
-        "photonics",
+        "metrology",
         "quantum",
+        "photonics",
+        "lasers",
         "optics"
       ],
-      "relevance_score": 3,
+      "relevance_score": 5,
       "first_seen": "2026-06-15T13:08:20.232762+00:00",
-      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
       "miss_count": 0
     },
     {
@@ -218,7 +190,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T16:56:55.999638+00:00",
-      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
       "miss_count": 0
     },
     {
@@ -243,7 +215,7 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
-      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
       "miss_count": 0
     },
     {
@@ -268,7 +240,7 @@
       "relevance_score": 2,
       "first_seen": "2026-03-09T17:11:34.637433+00:00",
       "last_seen": "2026-06-15T13:08:20.232762+00:00",
-      "miss_count": 0
+      "miss_count": 1
     },
     {
       "id": "1aa396d5244c",
@@ -292,7 +264,7 @@
       "relevance_score": 2,
       "first_seen": "2026-06-01T12:30:50.456886+00:00",
       "last_seen": "2026-06-08T11:50:43.376354+00:00",
-      "miss_count": 1
+      "miss_count": 2
     },
     {
       "id": "157f293c6845",
@@ -315,7 +287,31 @@
       ],
       "relevance_score": 2,
       "first_seen": "2026-06-15T13:08:20.232762+00:00",
-      "last_seen": "2026-06-15T13:08:20.232762+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
+      "miss_count": 0
+    },
+    {
+      "id": "3c8bc1ae3ae7",
+      "title": "Master's Programme in Materials Science and Technology",
+      "description": "",
+      "url": "https://www.lut.fi/en/studies/tekniikka/masters-programme-materials-science-and-technology",
+      "source_name": "LUT University Research Projects",
+      "source_org": "LUT University",
+      "country": "Finland",
+      "contact_name": "",
+      "contact_email": "",
+      "is_relevant": true,
+      "status": "active",
+      "categories": [
+        "advanced_materials"
+      ],
+      "matched_keywords": [
+        "ceramics",
+        "composite"
+      ],
+      "relevance_score": 2,
+      "first_seen": "2026-06-22T12:44:18.807126+00:00",
+      "last_seen": "2026-06-22T12:44:18.807126+00:00",
       "miss_count": 0
     }
   ]
